@@ -92,7 +92,7 @@ export default function Mix() {
   }, []);
 
   const depositTX = async () => {
-    const amountInOctas = 0.1 * 1e8;
+    const amountInOctas = 1 * 1e8;
     const transaction = {
       data: {
         function:

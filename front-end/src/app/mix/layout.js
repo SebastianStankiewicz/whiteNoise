@@ -7,20 +7,24 @@ import {
 import { Network } from "@aptos-labs/ts-sdk";
 import React from "react";
 import { Button } from "@/components/ui/button";
+
 function WalletGate({ children }) {
-  const { connect, connected } = useWallet();
+  const { connect, connected, wallets } = useWallet();
 
   if (!connected) {
     return (
-      <div className="min-h-screen bg-black flex items-center justify-center">
-        <Button
-          size="sm"
-          variant="outline"
-          className="border-white/30 text-black hover:bg-white/10"
-          onClick={connect}
-        >
-          Sign In with Wallet
-        </Button>
+      <div className="min-h-screen bg-black flex flex-col items-center justify-center gap-4">
+        {wallets.map((wallet) => (
+          <Button
+            key={wallet.name}
+            size="sm"
+            variant="outline"
+            className="border-white/30 text-black hover:bg-white/10"
+            onClick={() => connect(wallet.name)} // <-- specify wallet
+          >
+            Connect {wallet.name}
+          </Button>
+        ))}
       </div>
     );
   }

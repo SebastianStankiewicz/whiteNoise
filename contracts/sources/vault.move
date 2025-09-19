@@ -10,7 +10,7 @@ module 0x9c19f31c0e121a67ef47a340c3d47d0f930df610b2ad9252c8b6885a9d67c753::white
     const E_ALREADY_INITIALIZED: u64 = 2;
     const E_VAULT_NOT_INITIALIZED: u64 = 3;
 
-    const WITHDRAW_AMOUNT: u64 = 10000000; // 1 APT in Octas
+    const WITHDRAW_AMOUNT: u64 = 100000000; // 1 APT in Octas
     const ADMIN_ADDRESS: address = @0x9c19f31c0e121a67ef47a340c3d47d0f930df610b2ad9252c8b6885a9d67c753;
 
 

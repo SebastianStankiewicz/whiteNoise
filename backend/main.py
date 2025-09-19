@@ -67,8 +67,8 @@ def validateDeposit(depositTX):
         arguments = tx.get("payload", {}).get("arguments", [])
         amount = int(arguments[0])
         
-        if amount != 10000000:
-            return {"valid": False, "reason": "NOT 0.1 APTOS"}
+        if amount != 100000000:
+            return {"valid": False, "reason": "NOT 1 APTOS"}
 
         epoch = int(tx.get("timestamp", 0))  
         tx_time = datetime.fromtimestamp(epoch / 1e6, tz=timezone.utc)
